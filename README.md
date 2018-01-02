@@ -1,2 +1,2 @@
-# react-font-animation
-The react wrapper component to animate your font, like animate.css
+# react-animation
+A set of react components wrapper to add animation, like animate.css

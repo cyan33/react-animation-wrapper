@@ -1,0 +1,43 @@
+{
+  "name": "react-animation",
+  "version": "0.0.1",
+  "description": "A set of react components wrapper to add animation, like animate.css",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/parcel ./docs/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyan33/react-animation.git"
+  },
+  "keywords": [
+    "react",
+    "wrapper",
+    "component",
+    "animation",
+    "animate",
+    "css"
+  ],
+  "author": "Chang Yan <thomasyim94@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyan33/react-animation/issues"
+  },
+  "homepage": "https://github.com/cyan33/react-animation#readme",
+  "dependencies": {
+    "glamor": "^2.20.40",
+    "parcel-bundler": "^1.2.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-auto-import": "^0.7.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "gh-pages": "^1.1.0"
+  }
+}
