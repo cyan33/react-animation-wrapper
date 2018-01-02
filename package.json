@@ -4,7 +4,7 @@
   "description": "A set of react components wrapper to add animation, like animate.css",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel ./docs/index.html",
+    "start": "./node_modules/.bin/parcel ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
