@@ -5,7 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/parcel ./src/index.html",
+    "build": "rm -rf dist && ./node_modules/.bin/parcel build ./src/index.html",
+    "precommit": "lint-staged",
+    "deploy": "gh-pages -d /dist",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -38,6 +47,9 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "1.9.2"
   }
 }
