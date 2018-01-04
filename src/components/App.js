@@ -17,8 +17,10 @@ const Header = ({ animation }) => {
     <h1
       {...css({
         textAlign: "center",
-        color: "#2196f3",
-        fontFamily: "sans-serif"
+        background: "linear-gradient(#7dffed, #0059a1)",
+        fontFamily: "sans-serif",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent"
       })}
     >
       React-Animation
