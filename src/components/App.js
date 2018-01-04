@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { css } from "glamor";
+import hljs from "highlight.js";
+import "highlight.js/styles/paraiso-dark.css";
+
 import BounceIn from "./BounceIn";
 import Flash from "./Flash";
 import Pulse from "./Pulse";
 
 const animations = {
-  bounceIn: BounceIn,
-  flash: Flash,
-  pulse: Pulse
+  BounceIn,
+  Flash,
+  Pulse
 };
 
 const Header = ({ animation }) => {
@@ -71,14 +74,66 @@ class SelectAnimation extends Component {
   }
 }
 
+class CodeExample extends Component {
+  constructor() {
+    super();
+    this.wrapperCode = null;
+  }
+
+  // componentDidMount() {
+  //   hljs.initHighlighting()
+  // }
+
+  // componentDidUpdate() {
+  //   hljs.highlightBlock(this.wrapperCode)
+  // }
+
+  render() {
+    const { code, animation } = this.props;
+    console.log("render");
+    return (
+      <div
+        className="code-example"
+        {...css({
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center"
+        })}
+      >
+        <pre {...css({ width: "450" })}>
+          <code>
+            {`
+              const Header = () => (
+                <h1 style={{ textAlign: 'center' }}>
+                  Hello World
+                </h1>
+              )
+            `}
+          </code>
+        </pre>
+        <pre
+          ref={wrapperCode => (this.wrapperCode = wrapperCode)}
+          {...css({ width: "450" })}
+        >
+          <code>
+            {`
+                <${animation}>
+                  <Header />
+                </${animation}>
+            `}
+          </code>
+        </pre>
+      </div>
+    );
+  }
+}
+
 class App extends Component {
   constructor() {
     super();
-    this.state = { animation: null };
+    this.state = { animation: Object.keys(animations)[0] };
     this.selectAnimation = null;
   }
-
-  componentDidMount() {}
 
   onAnimate = () => {
     this.setState(() => ({
@@ -94,7 +149,8 @@ class App extends Component {
         ref={selectAnimation => (this.selectAnimation = selectAnimation)}
         key="select"
         onAnimate={this.onAnimate}
-      />
+      />,
+      <CodeExample key="code" animation={animation} />
     ];
   }
 }
