@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-import { css } from 'glamor'
+import React, { Component } from "react";
+import { css } from "glamor";
 
 export default function BounceIn(props) {
   return (
-    <div {...css({
-      animation: 'bounceIn 1.5s'
-    })}>
+    <div
+      {...css({
+        animation: "bounceIn 1.5s"
+      })}
+    >
       <style>
         {`
           @keyframes bounceIn {
@@ -25,5 +27,5 @@ export default function BounceIn(props) {
       </style>
       {props.children}
     </div>
-  )
+  );
 }

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { css } from "glamor";
-import hljs from "highlight.js";
-import "highlight.js/styles/atelier-lakeside-light.css";
 
-import BounceIn from "./BounceIn";
-import Flash from "./Flash";
-import Pulse from "./Pulse";
-import Swing from "./Swing";
-import Shake from "./Shake";
+import { BounceIn, Flash, Pulse, Swing, Shake } from "./lib";
+import Header from "./Header";
+import CodeExample from "./CodeExample";
+import SelectAnimation from "./SelectAnimation";
 
 const animations = {
   BounceIn,
@@ -16,94 +13,6 @@ const animations = {
   Swing,
   Shake
 };
-
-const Header = ({ animation }) => {
-  let Wrapper = animations[animation];
-
-  const Header = (
-    <h1
-      {...css({
-        textAlign: "center",
-        background: "linear-gradient(#7dffed, #0059a1)",
-        fontFamily: "sans-serif",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent"
-      })}
-    >
-      React-Animation
-    </h1>
-  );
-
-  return animation ? <Wrapper>{Header}</Wrapper> : Header;
-};
-
-const SelectAnimation = ({ value, onAnimate }) => (
-  <div
-    {...css({
-      display: "flex",
-      justifyContent: "center"
-    })}
-  >
-    <select
-      value={value}
-      onChange={onAnimate}
-      {...css({ width: "100", height: "25" })}
-    >
-      {Object.keys(animations).map(a => (
-        <option key={`animation-${a}`}>{a}</option>
-      ))}
-    </select>
-  </div>
-);
-
-class CodeExample extends Component {
-  constructor() {
-    super();
-    this.codeExample = null;
-  }
-
-  componentDidMount() {
-    hljs.initHighlighting();
-  }
-
-  componentDidUpdate() {
-    hljs.highlightBlock(this.codeExample);
-  }
-
-  render() {
-    const { code, animation } = this.props;
-    return (
-      <div
-        {...css({
-          display: "flex",
-          padding: "8",
-          flexDirection: "row"
-        })}
-      >
-        <pre {...css({ marginLeft: "75" })}>
-          <code>
-            {`
-              const Header = () => (
-                <h1 style={{ textAlign: 'center' }}>
-                  Hello World
-                </h1>
-              )
-            `}
-          </code>
-        </pre>
-        <pre>
-          <code ref={codeExample => (this.codeExample = codeExample)}>
-            {`
-                ReactDOM.render(<${animation}>
-                  <Header />
-                </${animation}>, document.querySelector('.root'))
-            `}
-          </code>
-        </pre>
-      </div>
-    );
-  }
-}
 
 class App extends Component {
   constructor() {
@@ -120,13 +29,30 @@ class App extends Component {
   render() {
     const { animation } = this.state;
     return [
-      <Header key="header" animation={animation} />,
+      <Header key="header" AnimationWrapper={animations[animation]} />,
       <SelectAnimation
         key="select"
+        animations={Object.keys(animations)}
         value={animation}
         onAnimate={this.onAnimate}
       />,
-      <CodeExample key="code" animation={animation} />
+      <CodeExample key="code" animation={animation} />,
+      <a
+        href="https://github.com/cyan33/react-animation"
+        key="fork"
+        {...css({
+          position: "fixed",
+          top: "0",
+          right: "0"
+        })}
+      >
+        <img
+          width="100"
+          src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+          alt="Fork me on GitHub"
+          data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+        />
+      </a>
     ];
   }
 }
