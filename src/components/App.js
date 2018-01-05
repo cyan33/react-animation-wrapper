@@ -40,7 +40,11 @@ const SelectAnimation = ({ value, onAnimate }) => (
       justifyContent: "center"
     })}
   >
-    <select onChange={onAnimate} value={value} {...css({ marginRight: "10" })}>
+    <select
+      value={value}
+      onChange={onAnimate}
+      {...css({ width: "100", height: "25" })}
+    >
       {Object.keys(animations).map(a => (
         <option key={`animation-${a}`}>{a}</option>
       ))}
