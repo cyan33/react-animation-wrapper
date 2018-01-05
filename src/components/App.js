@@ -43,7 +43,10 @@ class App extends Component {
         {...css({
           position: "fixed",
           top: "0",
-          right: "0"
+          right: "0",
+          "@media screen and (max-width: 450px)": {
+            display: "none"
+          }
         })}
       >
         <img

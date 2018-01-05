@@ -3,6 +3,16 @@ import { css } from "glamor";
 import hljs from "highlight.js";
 import "highlight.js/styles/atelier-lakeside-light.css";
 
+const headerCode = `const Header = () => (
+  <h1 style={{ textAlign: 'center' }}>
+    Hello World
+  </h1>
+)`;
+
+const wrapperCode = animation => `ReactDOM.render(<${animation}>
+  <Header />
+</${animation}>, document.querySelector('.root'))`;
+
 export default class CodeExample extends Component {
   constructor() {
     super();
@@ -21,30 +31,21 @@ export default class CodeExample extends Component {
     const { code, animation } = this.props;
     return (
       <div
+        className="code-example"
         {...css({
           display: "flex",
           padding: "8",
-          flexDirection: "row"
+          flexDirection: "row",
+          justifyContent: "center",
+          flexWrap: "wrap"
         })}
       >
-        <pre {...css({ marginLeft: "75" })}>
-          <code>
-            {`
-              const Header = () => (
-                <h1 style={{ textAlign: 'center' }}>
-                  Hello World
-                </h1>
-              )
-            `}
-          </code>
+        <pre className="code-example-pre" {...css({ marginRight: "50" })}>
+          <code>{headerCode}</code>
         </pre>
-        <pre>
+        <pre className="code-example-pre">
           <code ref={codeExample => (this.codeExample = codeExample)}>
-            {`
-                ReactDOM.render(<${animation}>
-                  <Header />
-                </${animation}>, document.querySelector('.root'))
-            `}
+            {wrapperCode(animation)}
           </code>
         </pre>
       </div>
