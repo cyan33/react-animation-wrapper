@@ -6,11 +6,15 @@ import "highlight.js/styles/atelier-lakeside-light.css";
 import BounceIn from "./BounceIn";
 import Flash from "./Flash";
 import Pulse from "./Pulse";
+import Swing from "./Swing";
+import Shake from "./Shake";
 
 const animations = {
   BounceIn,
   Flash,
-  Pulse
+  Pulse,
+  Swing,
+  Shake
 };
 
 const Header = ({ animation }) => {
@@ -70,7 +74,6 @@ class CodeExample extends Component {
     const { code, animation } = this.props;
     return (
       <div
-        className="code-example javascript"
         {...css({
           display: "flex",
           padding: "8",
