@@ -71,7 +71,6 @@ class CodeExample extends Component {
     return (
       <div
         className="code-example javascript"
-        ref={codeExample => (this.codeExample = codeExample)}
         {...css({
           display: "flex",
           padding: "8",
@@ -90,7 +89,7 @@ class CodeExample extends Component {
           </code>
         </pre>
         <pre>
-          <code>
+          <code ref={codeExample => (this.codeExample = codeExample)}>
             {`
                 ReactDOM.render(<${animation}>
                   <Header />
