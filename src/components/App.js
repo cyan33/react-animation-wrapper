@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { css } from "glamor";
 import hljs from "highlight.js";
-import "highlight.js/styles/paraiso-dark.css";
+import "highlight.js/styles/atelier-lakeside-light.css";
 
 import BounceIn from "./BounceIn";
 import Flash from "./Flash";
@@ -33,74 +33,48 @@ const Header = ({ animation }) => {
   return animation ? <Wrapper>{Header}</Wrapper> : Header;
 };
 
-class SelectAnimation extends Component {
-  constructor() {
-    super();
-    this.select = null;
-  }
-
-  getVal = () => {
-    return this.select.value;
-  };
-
-  render() {
-    const { onAnimate } = this.props;
-    return (
-      <div
-        {...css({
-          display: "flex",
-          justifyContent: "center"
-        })}
-      >
-        <select
-          ref={select => (this.select = select)}
-          {...css({ marginRight: "10" })}
-        >
-          {Object.keys(animations).map(a => (
-            <option key={`animation-${a}`}>{a}</option>
-          ))}
-        </select>
-        <button
-          onClick={onAnimate}
-          {...css({
-            borderRadius: "3",
-            cursor: "pointer"
-          })}
-        >
-          Animate it
-        </button>
-      </div>
-    );
-  }
-}
+const SelectAnimation = ({ value, onAnimate }) => (
+  <div
+    {...css({
+      display: "flex",
+      justifyContent: "center"
+    })}
+  >
+    <select onChange={onAnimate} value={value} {...css({ marginRight: "10" })}>
+      {Object.keys(animations).map(a => (
+        <option key={`animation-${a}`}>{a}</option>
+      ))}
+    </select>
+  </div>
+);
 
 class CodeExample extends Component {
   constructor() {
     super();
-    this.wrapperCode = null;
+    this.codeExample = null;
   }
 
-  // componentDidMount() {
-  //   hljs.initHighlighting()
-  // }
+  componentDidMount() {
+    hljs.initHighlighting();
+  }
 
-  // componentDidUpdate() {
-  //   hljs.highlightBlock(this.wrapperCode)
-  // }
+  componentDidUpdate() {
+    hljs.highlightBlock(this.codeExample);
+  }
 
   render() {
     const { code, animation } = this.props;
-    console.log("render");
     return (
       <div
-        className="code-example"
+        className="code-example javascript"
+        ref={codeExample => (this.codeExample = codeExample)}
         {...css({
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "center"
+          padding: "8",
+          flexDirection: "row"
         })}
       >
-        <pre {...css({ width: "450" })}>
+        <pre {...css({ marginLeft: "75" })}>
           <code>
             {`
               const Header = () => (
@@ -111,15 +85,12 @@ class CodeExample extends Component {
             `}
           </code>
         </pre>
-        <pre
-          ref={wrapperCode => (this.wrapperCode = wrapperCode)}
-          {...css({ width: "450" })}
-        >
+        <pre>
           <code>
             {`
-                <${animation}>
+                ReactDOM.render(<${animation}>
                   <Header />
-                </${animation}>
+                </${animation}>, document.querySelector('.root'))
             `}
           </code>
         </pre>
@@ -132,13 +103,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = { animation: Object.keys(animations)[0] };
-    this.selectAnimation = null;
   }
 
-  onAnimate = () => {
-    this.setState(() => ({
-      animation: this.selectAnimation.getVal()
-    }));
+  onAnimate = e => {
+    this.setState({
+      animation: e.target.value
+    });
   };
 
   render() {
@@ -146,8 +116,8 @@ class App extends Component {
     return [
       <Header key="header" animation={animation} />,
       <SelectAnimation
-        ref={selectAnimation => (this.selectAnimation = selectAnimation)}
         key="select"
+        value={animation}
         onAnimate={this.onAnimate}
       />,
       <CodeExample key="code" animation={animation} />
