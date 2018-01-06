@@ -1,13 +1,12 @@
-import React from "react";
-import { css } from "glamor";
+import React from 'react'
+import { css } from 'glamor'
 
 export default function Shake(props) {
   return (
     <div
       {...css({
-        animation: "shake 0.2s 4"
-      })}
-    >
+        animation: 'shake 0.2s 4',
+      })}>
       <style>
         {`
           @keyframes shake {
@@ -25,5 +24,5 @@ export default function Shake(props) {
       </style>
       {props.children}
     </div>
-  );
+  )
 }

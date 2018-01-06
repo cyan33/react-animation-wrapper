@@ -1,13 +1,12 @@
-import React from "react";
-import { css } from "glamor";
+import React from 'react'
+import { css } from 'glamor'
 
 export default function Swing(props) {
   return (
     <div
       {...css({
-        animation: "swing 1s"
-      })}
-    >
+        animation: 'swing 1s',
+      })}>
       <style>
         {`
           @keyframes swing {
@@ -31,5 +30,5 @@ export default function Swing(props) {
       </style>
       {props.children}
     </div>
-  );
+  )
 }

@@ -1,4 +1,6 @@
-dist
+docs/dist
+lib
+
 .cache
 # Logs
 logs

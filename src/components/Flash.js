@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { css } from "glamor";
+import React, { Component } from 'react'
+import { css } from 'glamor'
 
 export default function Flash(props) {
   return (
     <div
       {...css({
-        animation: "flash 1s"
-      })}
-    >
+        animation: 'flash 1s',
+      })}>
       <style>
         {`
           @keyframes flash {
@@ -22,5 +21,5 @@ export default function Flash(props) {
       </style>
       {props.children}
     </div>
-  );
+  )
 }

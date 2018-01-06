@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { css } from "glamor";
+import React, { Component } from 'react'
+import { css } from 'glamor'
 
 export default function Pulse(props) {
   return (
     <div
       {...css({
-        animation: "pulse 1s"
-      })}
-    >
+        animation: 'pulse 1s',
+      })}>
       <style>
         {`
           @keyframes pulse {
@@ -22,5 +21,5 @@ export default function Pulse(props) {
       </style>
       {props.children}
     </div>
-  );
+  )
 }

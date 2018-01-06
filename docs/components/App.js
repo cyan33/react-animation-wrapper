@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { css } from "glamor";
 
-import { BounceIn, Flash, Pulse, Swing, Shake } from "./lib";
+import { BounceIn, Flash, Pulse, Swing, Shake } from "react-animation-wrapper";
 import Header from "./Header";
 import CodeExample from "./CodeExample";
 import SelectAnimation from "./SelectAnimation";
