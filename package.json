@@ -1,8 +1,8 @@
 {
   "name": "react-animation-wrapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A set of react components wrapper to add animation, like animate.css",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "parcel ./docs/index.html -p 1234",
     "clean:docs": "rm -rf ./docs/dist",
@@ -11,7 +11,7 @@
     "build:lib": "npm run clean:lib && parcel build ./src/index.js --out-dir ./lib",
     "precommit": "lint-staged",
     "deploy": "gh-pages -d /docs/dist",
-    "prepublish": "npm run build:lib",
+    "prepublishOnly": "npm run build:lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -31,11 +31,11 @@
   "dependencies": {
     "glamor": "^2.20.40",
     "highlight.js": "^9.12.0",
-    "parcel-bundler": "^1.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.2.0",
     "babel-plugin-auto-import": "^0.7.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
