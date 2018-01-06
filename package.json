@@ -15,23 +15,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "!(node_modules)/}**/*.{js,jsx}": ["prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cyan33/react-animation-wrapper.git"
   },
-  "keywords": [
-    "react",
-    "wrapper",
-    "component",
-    "animation",
-    "animate",
-    "css"
-  ],
+  "keywords": ["react", "wrapper", "component", "animation", "animate", "css"],
   "author": "Chang Yan <thomasyim94@gmail.com>",
   "license": "MIT",
   "bugs": {
