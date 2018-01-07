@@ -10,7 +10,7 @@ Compared to animate.css, react-animation-wrapper has many uncomparable advantage
 1. More configurable and controllable via JavaScript and React.
 1. Less file size, just import the animation you need.
 
-## Usage (Not published yet)
+## Usage
 
 ```sh
 npm i --save react-animation-wrapper
@@ -19,20 +19,19 @@ npm i --save react-animation-wrapper
 Write a custom, normal react component:
 
 ```js
-const Header = () => (
-  <h1 style={{ textAlign: 'center' }}>
-    Hello World
-  </h1>
-)
+const Header = () => <h1 style={{ textAlign: 'center' }}>Hello World</h1>
 ```
 
 Wrap it up with the animation wrapper you like:
 
 ```js
 import { BounceIn } from 'react-animation-wrapper'
-ReactDOM.render(<BounceIn>
-  <Header />
-</BounceIn>, document.querySelector('.root'))
+ReactDOM.render(
+  <BounceIn>
+    <Header />
+  </BounceIn>,
+  document.querySelector('.root')
+)
 ```
 
 You are all set!

@@ -1,6 +1,15 @@
 {
-  "presets": ["env", "react"],
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ]
+  ],
   "plugins": [
+    "syntax-jsx",
+    "transform-react-jsx",
     "transform-class-properties",
     "transform-object-rest-spread"
   ]

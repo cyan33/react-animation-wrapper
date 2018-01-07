@@ -1,2 +1,8 @@
-docs.cache
+# documents
+docs/*
+
+# cache 
+.cache
+
+# dependencies
 node_modules

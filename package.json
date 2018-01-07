@@ -1,21 +1,22 @@
 {
   "name": "react-animation-wrapper",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A set of react components wrapper to add animation, like animate.css",
   "main": "lib/index.js",
   "scripts": {
-    "start": "parcel ./docs/index.html -p 1234",
+    "start": "parcel ./docs/index.html -d docs/dist",
     "clean:docs": "rm -rf ./docs/dist",
     "clean:lib": "rm -rf ./lib",
     "build:docs": "npm run clean:docs && parcel build ./docs/index.html --out-dir ./docs/dist",
-    "build:lib": "npm run clean:lib && parcel build ./src/index.js --out-dir ./lib",
+    "build:lib": "npm run clean:lib && rollup -c -o lib/index.js",
     "precommit": "lint-staged",
     "deploy": "gh-pages -d /docs/dist",
     "prepublishOnly": "npm run build:lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "!(node_modules)/}**/*.{js,jsx}": ["prettier --write", "git add"]
+    "src/**/*.{js,jsx}": ["prettier --write", "git add"],
+    "docs/**/*.{js,jsx}": ["prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
@@ -36,15 +37,16 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.2.0",
-    "babel-plugin-auto-import": "^0.7.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
-    "prettier": "1.9.2"
+    "prettier": "1.9.2",
+    "rollup": "^0.53.3",
+    "rollup-plugin-babel": "^3.0.3"
   }
 }
