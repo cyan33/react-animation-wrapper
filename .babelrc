@@ -11,6 +11,12 @@
     "syntax-jsx",
     "transform-react-jsx",
     "transform-class-properties",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    ["module-resolver", {
+      "root": ["./docs/components"],
+      "alias": {
+        "react-animation-wrapper": "./src/index.js"
+      }
+    }]
   ]
 }

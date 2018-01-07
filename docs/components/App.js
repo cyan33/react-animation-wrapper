@@ -1,33 +1,33 @@
-import React, { Component } from "react";
-import { css } from "glamor";
+import React, { Component } from 'react'
+import { css } from 'glamor'
 
-import { BounceIn, Flash, Pulse, Swing, Shake } from "react-animation-wrapper";
-import Header from "./Header";
-import CodeExample from "./CodeExample";
-import SelectAnimation from "./SelectAnimation";
+import { BounceIn, Flash, Pulse, Swing, Shake } from '../../src'
+import Header from './Header'
+import CodeExample from './CodeExample'
+import SelectAnimation from './SelectAnimation'
 
 const animations = {
   BounceIn,
   Flash,
   Pulse,
   Swing,
-  Shake
-};
+  Shake,
+}
 
 class App extends Component {
   constructor() {
-    super();
-    this.state = { animation: Object.keys(animations)[0] };
+    super()
+    this.state = { animation: Object.keys(animations)[0] }
   }
 
-  onAnimate = e => {
+  onAnimate = (e) => {
     this.setState({
-      animation: e.target.value
-    });
-  };
+      animation: e.target.value,
+    })
+  }
 
   render() {
-    const { animation } = this.state;
+    const { animation } = this.state
     return [
       <Header key="header" AnimationWrapper={animations[animation]} />,
       <SelectAnimation
@@ -41,23 +41,22 @@ class App extends Component {
         href="https://github.com/cyan33/react-animation"
         key="fork"
         {...css({
-          position: "fixed",
-          top: "0",
-          right: "0",
-          "@media screen and (max-width: 450px)": {
-            display: "none"
-          }
-        })}
-      >
+          position: 'fixed',
+          top: '0',
+          right: '0',
+          '@media screen and (max-width: 450px)': {
+            display: 'none',
+          },
+        })}>
         <img
           width="100"
           src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
           alt="Fork me on GitHub"
           data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
         />
-      </a>
-    ];
+      </a>,
+    ]
   }
 }
 
-export default App;
+export default App
