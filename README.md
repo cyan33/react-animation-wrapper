@@ -36,6 +36,12 @@ ReactDOM.render(
 
 You are all set!
 
+## FAQ
+
+### Why is my animation acting weird, not as expected
+
+The most possible reason is that you didn't specify the size and alignment of the container box of the content. This leads to the issue where your CONTAINER BOX is being animated, rather than its content. Make sure your content size is the same as its container.
+
 ## Contribution
 
 This project is in a sense very beginner-friendly project for those who want to get some fun of open source. It's well modularized, and the logic of each components is quite easy and similar to each other.
