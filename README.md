@@ -2,6 +2,9 @@
 
 A declarative set of react components wrapper to add animation, like animate.css
 
+![npm version](https://img.shields.io/npm/v/react-animation-wrapper.svg)
+![downloads per months](https://img.shields.io/npm/dm/react-animation-wrapper.svg)
+
 ## Why Another Animate.css
 
 Compared to animate.css, react-animation-wrapper has many uncomparable advantages:
