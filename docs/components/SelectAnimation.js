@@ -13,7 +13,7 @@ export default function SelectAnimation({ animations, value, onAnimate }) {
         onChange={onAnimate}
         {...css({
           width: '120',
-          height: '35',
+          height: '25',
           fontSize: '14',
           color: '#505050',
         })}>

@@ -34,7 +34,7 @@ export default class CodeExample extends Component {
         className="code-example"
         {...css({
           display: 'flex',
-          marginTop: '15',
+          marginTop: '5',
           padding: '8',
           flexDirection: 'row',
           justifyContent: 'center',
