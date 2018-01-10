@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
 
-import { BounceIn, Flash, Pulse, Swing, Shake } from '../../src'
+import { BounceIn, Flash, Pulse, Swing, Shake, RubberBand } from '../../src'
 import Header from './Header'
 import CodeExample from './CodeExample'
 import SelectAnimation from './SelectAnimation'
@@ -12,6 +12,7 @@ const animations = {
   Pulse,
   Swing,
   Shake,
+  RubberBand,
 }
 
 class App extends Component {
