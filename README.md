@@ -25,7 +25,7 @@ Write a custom, normal react component:
 const Header = () => <h1 style={{ textAlign: 'center' }}>Hello World</h1>
 ```
 
-Wrap it up with the animation wrapper you like:
+Wrap it up with the name of the animation wrapper: **(Check out all the available ones in the [demo page](https://cyan33.github.io/react-animation-wrapper/)!)**
 
 ```js
 import { BounceIn } from 'react-animation-wrapper'
