@@ -42,13 +42,11 @@
     "url": "https://github.com/cyan33/react-animation-wrapper/issues"
   },
   "homepage": "https://github.com/cyan33/react-animation-wrapper#readme",
-  "dependencies": {
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "glamor": "^2.20.40",
     "highlight.js": "^9.12.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
-  "devDependencies": {
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -61,6 +59,7 @@
     "parcel-bundler": "^1.2.0",
     "prettier": "1.9.2",
     "rollup": "^0.53.3",
-    "rollup-plugin-babel": "^3.0.3"
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }

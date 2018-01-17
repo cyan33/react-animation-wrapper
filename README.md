@@ -1,6 +1,8 @@
 # react-animation-wrapper
 
-A declarative set of react components wrapper to add animation, like animate.css
+A declarative set of react components wrapper to bring in animation, like animate.css.
+
+Check the demo page [here](https://cyan33.github.io/react-animation-wrapper/)
 
 ![npm version](https://img.shields.io/npm/v/react-animation-wrapper.svg)
 ![downloads per months](https://img.shields.io/npm/dm/react-animation-wrapper.svg)
@@ -9,14 +11,14 @@ A declarative set of react components wrapper to add animation, like animate.css
 
 Compared to animate.css, react-animation-wrapper has many uncomparable advantages:
 
-1. No global css variable polution (css in js).
-1. More configurable and controllable via JavaScript and React.
-1. Less file size, just import the animation you need.
+* 📦 Extremely light-weight: **6kb** (uglified) vs **72kb** (animate.css)
+* 🙅 No global CSS variable polution (css in js).
+* ✂️ Much More configurable and customizable via JavaScript and React.
 
 ## Usage
 
 ```sh
-npm i --save react-animation-wrapper
+npm install --save react-animation-wrapper
 ```
 
 Write a custom, normal react component:
@@ -44,6 +46,10 @@ You are all set!
 ### Why is my animation acting weird, not as expected
 
 The most possible reason is that you didn't specify the size and alignment of the container box of the content. This leads to the issue where your CONTAINER BOX is being animated, rather than its content. Make sure your content size is the same as its container.
+
+### Why there appears a scroll bar in the middle of the animation
+
+Due to different OS, browser and animations that transform its shape during the animation, it's likely that it goes beyond its container box, which then shows up a scroll bar. A quick fix: add `overflow: hidden` in the container box of the wrapper component.
 
 ## Contribution
 

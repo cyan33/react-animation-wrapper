@@ -1,4 +1,5 @@
 import babel from 'rollup-plugin-babel'
+import uglify from 'rollup-plugin-uglify'
 
 const env = process.env.NODE_ENV
 const config = {
@@ -9,6 +10,7 @@ const config = {
     babel({
       exclude: 'node_modules/**',
     }),
+    uglify(),
   ],
 }
 
