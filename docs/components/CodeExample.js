@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/atelier-lakeside-light.css'
+import 'highlight.js/styles/github-gist.css'
 
 const headerCode = `const Header = () => (
   <h1 style={{ textAlign: 'center' }}>
