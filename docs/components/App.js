@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
 
-import { BounceIn, Flash, Pulse, Swing, Shake, RubberBand, Jello, Wobble } from '../../src'
+import {
+  BounceIn,
+  Flash,
+  Pulse,
+  Swing,
+  Shake,
+  RubberBand,
+  Jello,
+  Wobble,
+  FadeIn,
+  Tada,
+  Bounce,
+  Flip,
+  ZoomIn,
+  ZoomOut,
+  RotateIn,
+  JackInTheBox,
+  RollIn,
+} from '../../src'
 import Header from './Header'
 import CodeExample from './CodeExample'
 import SelectAnimation from './SelectAnimation'
@@ -15,6 +33,15 @@ const animations = {
   RubberBand,
   Jello,
   Wobble,
+  FadeIn,
+  Tada,
+  Bounce,
+  Flip,
+  ZoomIn,
+  ZoomOut,
+  RotateIn,
+  JackInTheBox,
+  RollIn,
 }
 
 class App extends Component {
