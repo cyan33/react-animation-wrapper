@@ -41,6 +41,19 @@ ReactDOM.render(
 
 You are all set!
 
+Animations available:
+
+| WrapperName   |               |       |
+| ------------- | ------------- | ----- |
+| Bounce        | Flash         | Pulse |
+| Shake         | RubberBand    | Swing |
+| Jello         | Wobble        | FadeIn |
+| Tada          | Bounce        | Flip  |
+| ZoomIn        | ZoomOut       | JackInTheBox |
+| RotateIn      | RollIn        |       |
+
+Check the demo page [here](https://cyan33.github.io/react-animation-wrapper/) to see what they look like.
+
 ## FAQ
 
 ### Why is my animation acting weird, not as expected
