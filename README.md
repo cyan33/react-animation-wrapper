@@ -54,6 +54,16 @@ Animations available:
 
 Check the demo page [here](https://cyan33.github.io/react-animation-wrapper/) to see what they look like.
 
+## CHANGELOG
+
+### `v0.1.0`
+
+add 17 animations presets
+
+### `v0.2.0`
+
+expose `createAnimationWrapper` for customzied animation and could configure the animation properties (`delay`, `iterationCount`, `delay`) via passing props into the animation wrapper component
+
 ## FAQ
 
 ### Why is my animation acting weird, not as expected

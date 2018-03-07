@@ -77,7 +77,7 @@ class App extends Component {
           data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
         />
       </a>,
-      <BounceIn key="body">
+      <div key="body">
         <Header AnimationWrapper={animations[animation]} />
         <SelectAnimation
           animations={Object.keys(animations)}
@@ -85,7 +85,7 @@ class App extends Component {
           onAnimate={this.onAnimate}
         />
         <CodeExample animation={animation} />
-      </BounceIn>,
+      </div>,
     ]
   }
 }
